@@ -3,6 +3,7 @@
 This project is a simple practice while learning AWS as an AWS Solutions Architect Associate. It involves integrating a Next.js website and deploying it to an AWS EC2 instance.
 
 ## Project Overview
+![image](https://github.com/chunghei0116/ec2-web-container/blob/main/public/container-based-web.drawio.png)
 
 The project includes the following components:
 
