@@ -7,33 +7,33 @@ on:
       - main
 
 jobs:
-  deploy:
-    name: Deploy to EC2 on master branch push
-    runs-on: ubuntu-latest
+  # deploy:
+  #   name: Deploy to EC2 on master branch push
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout the files
-        uses: actions/checkout@v2
+  #   steps:
+  #     - name: Checkout the files
+  #       uses: actions/checkout@v2
 
-      - name: Deploy to AWS EC2
-        uses: easingthemes/ssh-deploy@main
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: ${{ secrets.HOST_DNS }}
-          REMOTE_USER: ${{ secrets.USERNAME }}
-          TARGET: ${{ secrets.TARGET_DIR }}
+  #     - name: Deploy to AWS EC2
+  #       uses: easingthemes/ssh-deploy@main
+  #       env:
+  #         SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+  #         REMOTE_HOST: ${{ secrets.HOST_DNS }}
+  #         REMOTE_USER: ${{ secrets.USERNAME }}
+  #         TARGET: ${{ secrets.TARGET_DIR }}
 
-      - name: Executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST_DNS }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd home
-            docker-compose dowm
-            docker stop home-web-1
-            docker-compose up -d
+  #     - name: Executing remote ssh commands using ssh key
+  #       uses: appleboy/ssh-action@master
+  #       with:
+  #         host: ${{ secrets.HOST_DNS }}
+  #         username: ${{ secrets.USERNAME }}
+  #         key: ${{ secrets.EC2_SSH_KEY }}
+  #         script: |
+  #           cd home
+  #           docker-compose dowm
+  #           docker stop home-web-1
+  #           docker-compose up -d
 
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -52,3 +52,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_EMAIL }}
           password: ${{ secrets.DOCKERHUB_PW }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          push: true
+          tags: user/app:latest
