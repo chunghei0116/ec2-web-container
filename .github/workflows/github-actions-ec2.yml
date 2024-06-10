@@ -33,5 +33,3 @@ jobs:
             cd home
             docker stop home-web-1
             docker-compose up -d
- 
-            
