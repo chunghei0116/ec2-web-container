@@ -56,4 +56,5 @@ jobs:
           script: |
             cd home
             docker-compose down
+            docker pull jonestse0116/next-app:latest
             docker-compose up -d
