@@ -32,6 +32,6 @@ jobs:
           script: |
             cd home
             docker stop home-web-1
-            docker-compose up
+            docker-compose up -d
  
             
