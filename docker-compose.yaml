@@ -2,6 +2,7 @@ version: "3"
 
 services:
   web:
+    image: jonestse0116/next-app:latest # Use the image pushed to DockerHub
     build: .
     ports:
       - "80:80"
