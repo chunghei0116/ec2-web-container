@@ -15,7 +15,11 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By Here is the change from new version
+            JonesSSSSSSSSSSSSSS Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Aspernatur laboriosam sapiente est, dolore
+            quisquam hic repudiandae magnam temporibus incidunt sunt! A
+            quibusdam nostrum numquam soluta error voluptatum! Sunt, voluptate
+            rerum.
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
