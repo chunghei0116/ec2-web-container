@@ -15,11 +15,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            JonesSSSSSSSSSSSSSS Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Aspernatur laboriosam sapiente est, dolore
-            quisquam hic repudiandae magnam temporibus incidunt sunt! A
-            quibusdam nostrum numquam soluta error voluptatum! Sunt, voluptate
-            rerum.
+            Nothing here
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
