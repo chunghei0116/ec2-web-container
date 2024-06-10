@@ -31,6 +31,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd home
-            ls -a
+            docker stop home-web-1
+            docker-compose up
  
             
